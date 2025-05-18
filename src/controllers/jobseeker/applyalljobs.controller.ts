@@ -70,7 +70,7 @@ export const getJobApplications = async (req: Request, res: Response): Promise<v
     }
 };
 
-// DELETE - Cancel application
+// DELETE - Cancel application for jobs
 export const deleteApplication = async (req: Request, res: Response): Promise<void> => {
     const { applicationId } = req.params;
 
