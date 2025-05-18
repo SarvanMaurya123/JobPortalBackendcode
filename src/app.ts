@@ -11,6 +11,7 @@ import JobseekerProfileWorkExperience from "../src/routes/jobseeker/experienceRo
 import JobseekerProfileEducation from "../src/routes/jobseeker/educationRoutes";
 import JobseekerProfileProgress from "../src/routes/jobseeker/progressRoutes";
 import JobseekerProfile from "../src/routes/jobseeker/getalljobseekerinfoRouter";
+import jobapplyjobseeker from "../src/routes/jobseeker/applyalljobs.router";
 // employer router
 
 import Registerloginlogoutemployers from "../src/routes/employer/auth.router"
@@ -34,7 +35,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use("/api/v1/jobseeker", loginregisterlogout)
 app.use("/api/v1/jobseeker", JobseekerProfileBasicInfoRoute)
 app.use("/api/v1/jobseeker", Skilssection)
-app.use("/api/v1/jobseeker", JobseekerProfileWorkExperience, JobseekerProfileEducation, JobseekerProfileProgress, JobseekerProfile)
+app.use("/api/v1/jobseeker", JobseekerProfileWorkExperience, JobseekerProfileEducation, JobseekerProfileProgress, JobseekerProfile, jobapplyjobseeker)
 
 // employer router
 app.use("/api/v1/employer", Registerloginlogoutemployers, EmployeeJobCreate);
