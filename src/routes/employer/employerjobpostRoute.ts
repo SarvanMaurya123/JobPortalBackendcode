@@ -2,6 +2,8 @@ import { Router } from "express";
 import verifyEmployerJWT from "../../middleware/employer.middlewere";
 import {
     deleteJob,
+    getAllApplications,
+    getJobAnalytics,
     getJobs,
     jobseekersGetData,
     JobsPost,
@@ -24,6 +26,13 @@ router.put("/jobs/:id", verifyEmployerJWT, updateJob);
 router.delete("/jobs/:id", verifyEmployerJWT, deleteJob);
 
 router.get("/jobseeker/jobs/:id", verifyUserJWT, jobseekersGetData);
+
+
+//get all applyed job
+router.get('/applications', verifyEmployerJWT, getAllApplications); // GET /applications
+
+//job analytics
+router.get('/analytics', verifyEmployerJWT, getJobAnalytics);
 
 
 export default router;
